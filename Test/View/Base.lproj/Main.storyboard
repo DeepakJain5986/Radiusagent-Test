@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hXc-Jm-4If">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OptionTVCell" id="lVK-bb-gxD" customClass="OptionTVCell" customModule="Test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="31.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lVK-bb-gxD" id="xzr-vT-Wgd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="31.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-kj-FBh">
+                                                    <rect key="frame" x="20" y="5" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="Gg6-YZ-vsW"/>
+                                                        <constraint firstAttribute="height" constant="35" id="kV8-ML-uro"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TjV-8s-bAk">
+                                                    <rect key="frame" x="70" y="16" width="294" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hma-kq-GaB">
+                                                    <rect key="frame" x="55" y="2" width="349" height="27.5"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="2" maxX="2.2250738585072014e-308" maxY="2"/>
+                                                    <state key="normal" image="unselected_radio_btn">
+                                                        <color key="titleColor" red="0.49803921569999998" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <state key="selected" image="selected_radio_btn"/>
+                                                    <state key="highlighted" image="selected_radio_btn"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TjV-8s-bAk" firstAttribute="leading" secondItem="GRh-kj-FBh" secondAttribute="trailing" constant="15" id="0ab-Tu-OAX"/>
+                                                <constraint firstItem="GRh-kj-FBh" firstAttribute="top" secondItem="xzr-vT-Wgd" secondAttribute="top" constant="5" id="7R4-mp-Ka4"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hma-kq-GaB" secondAttribute="bottom" constant="2" id="FDU-uk-Icx"/>
+                                                <constraint firstItem="TjV-8s-bAk" firstAttribute="centerY" secondItem="xzr-vT-Wgd" secondAttribute="centerY" id="QFT-hE-v67"/>
+                                                <constraint firstItem="Hma-kq-GaB" firstAttribute="top" secondItem="xzr-vT-Wgd" secondAttribute="top" constant="2" id="acj-0k-yr9"/>
+                                                <constraint firstItem="GRh-kj-FBh" firstAttribute="leading" secondItem="xzr-vT-Wgd" secondAttribute="leading" constant="20" id="hAg-5h-Yx2"/>
+                                                <constraint firstItem="Hma-kq-GaB" firstAttribute="leading" secondItem="GRh-kj-FBh" secondAttribute="trailing" id="lC6-uH-aAs"/>
+                                                <constraint firstAttribute="trailing" secondItem="TjV-8s-bAk" secondAttribute="trailing" constant="50" id="v4C-XF-37U"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hma-kq-GaB" secondAttribute="trailing" constant="10" id="wyu-F5-Y23"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btn" destination="Hma-kq-GaB" id="ShK-rp-xcS"/>
+                                            <outlet property="imgView" destination="GRh-kj-FBh" id="p4L-us-4b7"/>
+                                            <outlet property="lbl" destination="TjV-8s-bAk" id="cWQ-pO-ka8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="VB8-w9-fDA"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="19l-Qd-Tlx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hXc-Jm-4If" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3TW-0t-arH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hXc-Jm-4If" secondAttribute="trailing" id="9WD-Oj-Mmm"/>
+                            <constraint firstItem="hXc-Jm-4If" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ex8-xp-nwF"/>
+                            <constraint firstAttribute="bottom" secondItem="hXc-Jm-4If" secondAttribute="bottom" id="O8r-Yp-oQd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tblView" destination="hXc-Jm-4If" id="Rsd-qg-KPv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="126" y="84"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="selected_radio_btn" width="27" height="27"/>
+        <image name="unselected_radio_btn" width="27" height="27"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
