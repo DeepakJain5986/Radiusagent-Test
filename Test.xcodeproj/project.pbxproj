@@ -10,7 +10,6 @@
 		008214BC2A4D9B29008EF285 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008214BB2A4D9B29008EF285 /* Response.swift */; };
 		008214BE2A4D9B70008EF285 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008214BD2A4D9B70008EF285 /* ApiService.swift */; };
 		008214C02A4D9B88008EF285 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008214BF2A4D9B88008EF285 /* Connection.swift */; };
-		008214C22A4D9BA6008EF285 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008214C12A4D9BA6008EF285 /* Extension.swift */; };
 		008214C42A4D9BBD008EF285 /* HttpRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008214C32A4D9BBD008EF285 /* HttpRequestHelper.swift */; };
 		008214C62A4D9E16008EF285 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008214C52A4D9E16008EF285 /* ViewModel.swift */; };
 		008214C92A4D9F56008EF285 /* OptionTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008214C82A4D9F56008EF285 /* OptionTVCell.swift */; };
@@ -28,7 +27,6 @@
 		008214BB2A4D9B29008EF285 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		008214BD2A4D9B70008EF285 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		008214BF2A4D9B88008EF285 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		008214C12A4D9BA6008EF285 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		008214C32A4D9BBD008EF285 /* HttpRequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestHelper.swift; sourceTree = "<group>"; };
 		008214C52A4D9E16008EF285 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		008214C82A4D9F56008EF285 /* OptionTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTVCell.swift; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 		008214B22A4D9A0F008EF285 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				008214C12A4D9BA6008EF285 /* Extension.swift */,
 				008214C32A4D9BBD008EF285 /* HttpRequestHelper.swift */,
 			);
 			path = Helpers;
@@ -296,7 +293,6 @@
 				00964DD52A4D938B0004DCF6 /* ViewController.swift in Sources */,
 				00964DD72A4D938B0004DCF6 /* SceneDelegate.swift in Sources */,
 				008214BE2A4D9B70008EF285 /* ApiService.swift in Sources */,
-				008214C22A4D9BA6008EF285 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Test/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -474,7 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Test/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

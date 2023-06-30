@@ -57,7 +57,7 @@ class ViewModel:NSObject{
     
     func createCellModel(opt: Option,isRadioButtonSelected:Bool) -> OptionViewModel {
         
-        return OptionViewModel(options_id: opt.id, options_name: opt.name, options_img_url: opt.icon, isRadioButtonSelected: isRadioButtonSelected)
+        return OptionViewModel(options_id: opt.id, options_name: opt.name, options_icon_name: opt.icon, isRadioButtonSelected: isRadioButtonSelected)
     }
     
     func getCellViewModel(at indexPath: IndexPath) -> CellViewModel {
@@ -71,35 +71,78 @@ class ViewModel:NSObject{
     }
     
     
-    func updateDataArray(parentViewTag:Int,childViewTag:Int,updatedCellViewModel:[CellViewModel]){
+    func updateDataArray(parentViewTag:Int,childViewTag:Int,updatedCellViewModel:[CellViewModel]) -> Bool{
         
         let selectedObj = self.cellViewModels[parentViewTag]
         let selectedChildObj = selectedObj.optionViewModel[childViewTag]
 
-//        var updatedCellViewModelData = [CellViewModel]()
-        var updatedCellViewModelData = updatedCellViewModel
+        var is_first_exclusions_combinations_exist = false
+        var is_second_exclusions_combinations_exist = false
         
-        for obj in self.cellViewModels{
+        for exclusionArrayObj in self.exclusions{
             
-            if obj.facility_id == selectedObj.facility_id{
+            is_first_exclusions_combinations_exist = false
+            is_second_exclusions_combinations_exist = false
+            
+            for exclusionObj in exclusionArrayObj{
                 
-                var optionViewModel = [OptionViewModel]()
-                
-                for oVm in obj.optionViewModel{
+                for facilityObj in updatedCellViewModel{
                     
-                    var optionViewModelObj = oVm
-                    
-                    if oVm.options_id == selectedChildObj.options_id{
-                        optionViewModelObj.isRadioButtonSelected = true
-                    }else{
-                        optionViewModelObj.isRadioButtonSelected = false
+                    for optionObj in facilityObj.optionViewModel{
+                        
+                        if optionObj.isRadioButtonSelected{
+                            
+                            if ((facilityObj.facility_id == exclusionObj.facilityID) && (optionObj.options_id == exclusionObj.optionsID)){
+                                is_first_exclusions_combinations_exist = true
+                            }
+                        }else if ((selectedObj.facility_id == exclusionObj.facilityID) && (selectedChildObj.options_id == exclusionObj.optionsID)){
+                            is_second_exclusions_combinations_exist = true
+                        }
+                        if is_first_exclusions_combinations_exist && is_second_exclusions_combinations_exist{
+                            break
+                        }
                     }
-                    optionViewModel.append(optionViewModelObj)
+                    if is_first_exclusions_combinations_exist && is_second_exclusions_combinations_exist{
+                        break
+                    }
                 }
-                updatedCellViewModelData.remove(at: parentViewTag)
-                updatedCellViewModelData.insert(CellViewModel(facility_id: obj.facility_id, facility_name: obj.facility_name, optionViewModel: optionViewModel), at: parentViewTag)
+                if is_first_exclusions_combinations_exist && is_second_exclusions_combinations_exist{
+                    break
+                }
+            }
+            if is_first_exclusions_combinations_exist && is_second_exclusions_combinations_exist{
+                break
+            }
+        }
+        
+        if is_first_exclusions_combinations_exist && is_second_exclusions_combinations_exist{
+            return true
+        }else{
+            var updatedCellViewModelData = updatedCellViewModel
+            
+            for obj in self.cellViewModels{
+                
+                if obj.facility_id == selectedObj.facility_id{
+                    
+                    var optionViewModel = [OptionViewModel]()
+                    
+                    for oVm in obj.optionViewModel{
+                        
+                        var optionViewModelObj = oVm
+                        
+                        if oVm.options_id == selectedChildObj.options_id{
+                            optionViewModelObj.isRadioButtonSelected = true
+                        }else{
+                            optionViewModelObj.isRadioButtonSelected = false
+                        }
+                        optionViewModel.append(optionViewModelObj)
+                    }
+                    updatedCellViewModelData.remove(at: parentViewTag)
+                    updatedCellViewModelData.insert(CellViewModel(facility_id: obj.facility_id, facility_name: obj.facility_name, optionViewModel: optionViewModel), at: parentViewTag)
+                 }
              }
-         }
-        self.cellViewModels = updatedCellViewModelData
+            self.cellViewModels = updatedCellViewModelData
+            return false
+        }
     }
 }

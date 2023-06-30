@@ -18,7 +18,7 @@ struct OptionViewModel{
     
     var options_id:String
     var options_name:String
-    var options_img_url:String
+    var options_icon_name:String
     var isRadioButtonSelected:Bool
 }
 
